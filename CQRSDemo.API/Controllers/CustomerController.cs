@@ -1,4 +1,5 @@
-﻿using CQRSDemo.Framework.CQRS.Command;
+﻿using CQRSDemo.Data;
+using CQRSDemo.Framework.CQRS.Command;
 using CQRSDemo.Framework.CQRS.Query;
 using CQRSDemo.Framework.Request;
 using CQRSDemo.Framework.Response;
@@ -51,7 +52,12 @@ namespace CQRSDemo.API.Controllers
                 }
 
                 var addCustomerCommand = new AddCustomerCommand(addCustomer);
-                var response = await _mediator.Send(addCustomerCommand);
+                var responseCreate = await _mediator.Send(addCustomerCommand);
+
+                ResponseModel response = new ResponseModel();
+                response.Success = true;
+                response.Message = "Customer created successfully";
+
                 return Ok(response);
 
             }
@@ -91,7 +97,12 @@ namespace CQRSDemo.API.Controllers
                     return BadRequest(validationResult.Errors);
                 }
                 var customer = new UpdateCustomerCommand(updateCustomer);
-                var response = await _mediator.Send(customer);
+                var responseUpdate = await _mediator.Send(customer);
+
+
+                ResponseModel response = new ResponseModel();
+                response.Success = true;
+                response.Message = "Customer updated successfully";
                 return Ok(response);
             }
             catch (Exception ex)
@@ -107,7 +118,12 @@ namespace CQRSDemo.API.Controllers
         public async Task<IActionResult> DeleteCustomer([FromRoute(Name = "id")] long Id)
         {
             var customer = new DeleteCustomerCommand(Id);
-            var response = await _mediator.Send(customer);
+            var responseDelete = await _mediator.Send(customer);
+
+
+            ResponseModel response = new ResponseModel();
+            response.Success = true;
+            response.Message = "Customer deleted successfully";
             return Ok(response);
         }
         #endregion
