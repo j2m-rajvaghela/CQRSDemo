@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRSDemo.API", "CQRSDemo.API\CQRSDemo.API.csproj", "{CC54A96B-9C55-4834-897D-5BA7F41960F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRSDemo.WebAPI", "CQRSDemo.API\CQRSDemo.WebAPI.csproj", "{CC54A96B-9C55-4834-897D-5BA7F41960F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRSDemo.Data", "CQRSDemo.Data\CQRSDemo.Data.csproj", "{DEA08923-640E-4B9B-8161-F188CF59BE87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRSDemo.Data", "CQRSDemo.Data\CQRSDemo.Data.csproj", "{DEA08923-640E-4B9B-8161-F188CF59BE87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRSDemo.Framework", "CQRSDemo.Framework\CQRSDemo.Framework.csproj", "{292BBDA4-D33F-4D0F-BC3C-A434A0636570}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRSDemo.Framework", "CQRSDemo.Framework\CQRSDemo.Framework.csproj", "{292BBDA4-D33F-4D0F-BC3C-A434A0636570}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
