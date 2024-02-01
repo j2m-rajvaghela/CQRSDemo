@@ -45,7 +45,7 @@ namespace CQRSDemo.Framework.CQRS.Handler
 
                 if (response >= 1)
                 {
-                    return customer.CustomerId;
+                    return customer.CustomerID;
                 }
                 else
                 {

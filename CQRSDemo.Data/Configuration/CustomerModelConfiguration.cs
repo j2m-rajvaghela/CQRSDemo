@@ -14,10 +14,10 @@ namespace CQRSDemo.Data.Configuration
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
             builder.ToTable("customer");
-            builder.HasKey(x => x.CustomerId);
+            builder.HasKey(x => x.CustomerID);
 
             builder
-                .Property(x => x.CustomerId)
+                .Property(x => x.CustomerID)
                 .HasColumnName("customer_id")
                 .HasColumnType("Bigint")
                 .IsRequired()

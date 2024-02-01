@@ -20,7 +20,7 @@ namespace CQRSDemo.Framework.CQRS.Handler
         }
         public async Task<bool> Handle(DeleteCustomerCommand request, CancellationToken cancellationToken)
         {
-            var customer = await _customerContext.Customers.FirstOrDefaultAsync(c => c.CustomerId == request.CustomerId);
+            var customer = await _customerContext.Customers.FirstOrDefaultAsync(c => c.CustomerID == request.CustomerID);
             if (customer != null)
             {
                 _customerContext.Customers.Remove(customer);

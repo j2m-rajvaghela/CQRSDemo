@@ -20,7 +20,7 @@ namespace CQRSDemo.Framework.CQRS.Handler
         }
         public async Task<long> Handle(UpdateCustomerCommand request, CancellationToken cancellationToken)
         {
-           var customer = await _customerContext.Customers.FirstOrDefaultAsync(c => c.CustomerId == request.UpdateCustomer.CustomerId);
+           var customer = await _customerContext.Customers.FirstOrDefaultAsync(c => c.CustomerID == request.UpdateCustomer.CustomerID);
             {
                 if (customer == null)
                 {
@@ -28,7 +28,7 @@ namespace CQRSDemo.Framework.CQRS.Handler
                 }
                 else
                 {
-                    customer.CustomerId = request.UpdateCustomer.CustomerId;
+                    customer.CustomerID = request.UpdateCustomer.CustomerID;
                     customer.Name = request.UpdateCustomer.Name;
                     customer.Email = request.UpdateCustomer.Email;
                     customer.Phone = request.UpdateCustomer.Phone;
@@ -38,7 +38,7 @@ namespace CQRSDemo.Framework.CQRS.Handler
                     var response = await _customerContext.SaveChangesAsync();
                     if (response >= 1)
                     {
-                        return customer.CustomerId;
+                        return customer.CustomerID;
                     }
                     return 0;
                 }

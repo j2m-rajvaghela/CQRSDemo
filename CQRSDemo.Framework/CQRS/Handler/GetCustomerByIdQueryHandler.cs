@@ -24,7 +24,7 @@ namespace CQRSDemo.Framework.CQRS.Handler
         {
             try
             {
-                var customer = await _customerContext.Customers.FirstOrDefaultAsync(c => c.CustomerId == request.CustomerId);
+                var customer = await _customerContext.Customers.FirstOrDefaultAsync(c => c.CustomerID == request.CustomerID);
                 if (customer == null)
                 {
                     return null;

@@ -32,7 +32,7 @@ namespace CQRSDemo.Framework.Factory
                 return null;
             }
             CustomerResponse response = new CustomerResponse();
-            response.CustomerId = customer.CustomerId;
+            response.CustomerID = customer.CustomerID;
             response.Name = customer.Name;
             response.Email = customer.Email;
             response.Phone = customer.Phone;
@@ -59,7 +59,7 @@ namespace CQRSDemo.Framework.Factory
                 return null;
             }
             CustomerByIdResponse response = new CustomerByIdResponse();
-            response.CustomerId = customer.CustomerId;
+            response.CustomerID = customer.CustomerID;
             response.Name = customer.Name;
             response.Email = customer.Email;
             response.Phone = customer.Phone;

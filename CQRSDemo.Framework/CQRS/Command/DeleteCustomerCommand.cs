@@ -9,11 +9,11 @@ namespace CQRSDemo.Framework.CQRS.Command
 {
     public class DeleteCustomerCommand : IRequest<bool>
     {
-        public DeleteCustomerCommand(long customerId)
+        public DeleteCustomerCommand(long customerID)
         {
-            CustomerId = customerId;
+            CustomerID = customerID;
         }
 
-        public long CustomerId { get; }
+        public long CustomerID { get; }
     }
 }

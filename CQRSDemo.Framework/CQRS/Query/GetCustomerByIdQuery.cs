@@ -10,11 +10,11 @@ namespace CQRSDemo.Framework.CQRS.Query
 {
     public class GetCustomerByIdQuery : IRequest<CustomerByIdResponse>
     {
-        public GetCustomerByIdQuery(long customerId)
+        public GetCustomerByIdQuery(long customerID)
         {
-            CustomerId = customerId;
+            CustomerID = customerID;
         }
 
-        public long CustomerId { get; }
+        public long CustomerID { get; }
     }
 }

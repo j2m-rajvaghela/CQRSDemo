@@ -71,9 +71,9 @@ namespace CQRSDemo.API.Controllers
         #region GetById
 
         [HttpGet("getbyid/{id}")]
-        public async Task<ActionResult<CustomerByIdResponse>> GetCustomerById([FromRoute(Name = "id")] long customerId)
+        public async Task<ActionResult<CustomerByIdResponse>> GetCustomerById([FromRoute(Name = "id")] long customerID)
         {
-            var query = new GetCustomerByIdQuery(customerId);
+            var query = new GetCustomerByIdQuery(customerID);
             var response = await _mediator.Send(query);
             if (response == null)
             {
@@ -115,9 +115,9 @@ namespace CQRSDemo.API.Controllers
         #region Delete
 
         [HttpDelete("delete/{id}")]
-        public async Task<IActionResult> DeleteCustomer([FromRoute(Name = "id")] long Id)
+        public async Task<IActionResult> DeleteCustomer([FromRoute(Name = "id")] long ID)
         {
-            var customer = new DeleteCustomerCommand(Id);
+            var customer = new DeleteCustomerCommand(ID);
             var responseDelete = await _mediator.Send(customer);
 
 
